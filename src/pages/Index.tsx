@@ -1,4 +1,4 @@
-import { TrendingUp, Shield, Zap, ArrowRight } from "lucide-react";
+import { TrendingUp, Shield, Zap, DollarSign } from "lucide-react";
 import WaitlistForm from "@/components/WaitlistForm";
 
 const Index = () => {
@@ -43,14 +43,14 @@ const Index = () => {
             </p>
 
             {/* Features */}
-            <div className="grid sm:grid-cols-3 gap-6 pt-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <Zap className="w-5 h-5 text-primary" />
+                  <DollarSign className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">Fast Approval</h3>
-                  <p className="text-sm text-muted-foreground">Get funded in days, not months</p>
+                  <h3 className="font-medium mb-1">Avoid Capital Gains</h3>
+                  <p className="text-sm text-muted-foreground">No taxable events on your equity</p>
                 </div>
               </div>
 
@@ -66,11 +66,21 @@ const Index = () => {
 
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Zap className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium mb-1">Fast Approval</h3>
+                  <p className="text-sm text-muted-foreground">Get funded in days, not months</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <TrendingUp className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-medium mb-1">Low Rates</h3>
-                  <p className="text-sm text-muted-foreground">Competitive terms for tech equity</p>
+                  <p className="text-sm text-muted-foreground">Rates starting close to 10%</p>
                 </div>
               </div>
             </div>
