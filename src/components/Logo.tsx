@@ -2,8 +2,8 @@ import React from 'react';
 
 export function Logo() {
   return (
-    <div className="flex items-center gap-2">
-      <svg width="40" height="40" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="flex items-center gap-3">
+      <svg width="56" height="56" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Network nodes forming H */}
         {/* Left vertical nodes */}
         <circle cx="35" cy="35" r="8" fill="url(#gradient10)"/>
@@ -24,14 +24,14 @@ export function Logo() {
         <line x1="35" y1="60" x2="85" y2="60" stroke="url(#gradient10)" strokeWidth="3"/>
         
         {/* Network connections */}
-        <line x1="35" y1="60" x2="60" y2="60" stroke="#F1FFE7" strokeWidth="2" opacity="0.6"/>
-        <line x1="60" y1="60" x2="85" y2="60" stroke="#F1FFE7" strokeWidth="2" opacity="0.6"/>
+        <line x1="35" y1="60" x2="60" y2="60" stroke="#F1FFE7" strokeWidth="2" opacity="0.8"/>
+        <line x1="60" y1="60" x2="85" y2="60" stroke="#F1FFE7" strokeWidth="2" opacity="0.8"/>
         
         {/* Outer nodes */}
-        <circle cx="20" cy="60" r="4" fill="#989FCE"/>
-        <circle cx="100" cy="60" r="4" fill="#989FCE"/>
-        <line x1="20" y1="60" x2="35" y2="60" stroke="#989FCE" strokeWidth="1.5" opacity="0.4"/>
-        <line x1="85" y1="60" x2="100" y2="60" stroke="#989FCE" strokeWidth="1.5" opacity="0.4"/>
+        <circle cx="20" cy="60" r="4" fill="#F1FFE7"/>
+        <circle cx="100" cy="60" r="4" fill="#F1FFE7"/>
+        <line x1="20" y1="60" x2="35" y2="60" stroke="#F1FFE7" strokeWidth="1.5" opacity="0.5"/>
+        <line x1="85" y1="60" x2="100" y2="60" stroke="#F1FFE7" strokeWidth="1.5" opacity="0.5"/>
         
         <defs>
           <linearGradient id="gradient10" x1="35" y1="35" x2="85" y2="85" gradientUnits="userSpaceOnUse">
@@ -40,7 +40,7 @@ export function Logo() {
           </linearGradient>
         </defs>
       </svg>
-      <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Hebel</span>
+      <span className="text-2xl font-bold text-foreground">Hebel</span>
     </div>
   );
 }
