@@ -1,6 +1,6 @@
-import { TrendingUp, Shield, Zap, DollarSign } from "lucide-react";
+import { Shield, Zap, DollarSign, TrendingUp } from "lucide-react";
 import WaitlistForm from "@/components/WaitlistForm";
-
+import { Logo } from "@/components/Logo";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -13,12 +13,7 @@ const Index = () => {
       {/* Navigation */}
       <nav className="relative z-10 container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-semibold">Hebel</span>
-          </div>
+          <Logo />
         </div>
       </nav>
 
