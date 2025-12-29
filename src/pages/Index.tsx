@@ -88,12 +88,12 @@ const Index = () => {
             {/* Social proof */}
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
+                {["JM", "SK", "AR", "PT"].map((initials, i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-xs font-medium text-muted-foreground"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/40 to-primary/20 border-2 border-background flex items-center justify-center text-xs font-medium text-primary-foreground"
                   >
-                    {String.fromCharCode(64 + i)}
+                    {initials}
                   </div>
                 ))}
               </div>
