@@ -33,13 +33,13 @@ const Index = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Unlock Liquidity with Your{" "}
-              <span className="gradient-text">RSUs</span>
+              Access Capital Without{" "}
+              <span className="gradient-text">Selling Your Stock</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Get instant access to capital by leveraging your unvested RSUs, stock options, and equity compensation. 
-              No selling. No dilution. Just smart financing.
+              We connect you to lenders who provide loans backed by your RSUs, stock options, and equity compensation. 
+              Keep your shares. Keep your upside. Get the cash you need today.
             </p>
 
             {/* Features */}

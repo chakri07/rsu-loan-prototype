@@ -16,31 +16,37 @@ export type Database = {
     Tables: {
       waitlist: {
         Row: {
+          age: string
+          company: string
           created_at: string
           email: string
           gender: string
           id: string
-          leverage_type: string
           name: string
           net_worth: string
+          use_for: string
         }
         Insert: {
+          age?: string
+          company: string
           created_at?: string
           email: string
           gender: string
           id?: string
-          leverage_type: string
           name: string
           net_worth: string
+          use_for?: string
         }
         Update: {
+          age?: string
+          company?: string
           created_at?: string
           email?: string
           gender?: string
           id?: string
-          leverage_type?: string
           name?: string
           net_worth?: string
+          use_for?: string
         }
         Relationships: []
       }
