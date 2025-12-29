@@ -10,50 +10,50 @@
     --background: 285 91% 12%;
     --foreground: 0 0% 100%;
 
-    --card: 285 70% 15%;
+    --card: 285 60% 18%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 285 70% 15%;
+    --popover: 285 60% 18%;
     --popover-foreground: 0 0% 100%;
 
-    /* Lavender highlight as primary - #989FCE */
-    --primary: 234 35% 70%;
+    /* Mint highlight as primary - #F1FFE7 */
+    --primary: 94 100% 95%;
     --primary-foreground: 285 91% 12%;
 
     /* Muted purple secondary - #7D6B91 */
     --secondary: 270 15% 49%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 285 50% 20%;
-    --muted-foreground: 270 15% 65%;
+    --muted: 285 40% 25%;
+    --muted-foreground: 270 20% 75%;
 
-    /* Mint highlight as accent - #F1FFE7 */
-    --accent: 94 100% 95%;
+    /* Lavender as accent - #989FCE */
+    --accent: 234 35% 70%;
     --accent-foreground: 285 91% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 20% 30%;
-    --input: 285 50% 18%;
-    --ring: 234 35% 70%;
+    --border: 270 30% 35%;
+    --input: 285 50% 20%;
+    --ring: 94 100% 95%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
     --highlight-lavender: 234 35% 70%;
     --highlight-mint: 94 100% 95%;
-    --surface-glass: 285 60% 14%;
+    --surface-glass: 285 50% 16%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(234 35% 70%), hsl(94 100% 95%));
-    --gradient-surface: linear-gradient(180deg, hsl(285 70% 15%), hsl(285 91% 10%));
-    --gradient-glow: radial-gradient(ellipse at center, hsl(234 35% 70% / 0.15), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(94 100% 95%), hsl(234 35% 70%));
+    --gradient-surface: linear-gradient(180deg, hsl(285 60% 18%), hsl(285 91% 10%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(94 100% 95% / 0.15), transparent 70%);
     
     /* Shadows */
-    --shadow-primary: 0 0 60px hsl(234 35% 70% / 0.2);
-    --shadow-card: 0 8px 32px hsl(285 91% 5% / 0.4);
-    --shadow-elevated: 0 20px 40px hsl(285 91% 5% / 0.5);
+    --shadow-primary: 0 0 60px hsl(94 100% 95% / 0.2);
+    --shadow-card: 0 8px 32px hsl(285 91% 5% / 0.5);
+    --shadow-elevated: 0 20px 40px hsl(285 91% 5% / 0.6);
   }
 }
 
