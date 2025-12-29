@@ -2,8 +2,8 @@ import React from 'react';
 
 export function Logo() {
   return (
-    <div className="flex items-center gap-2">
-      <svg width="40" height="40" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="flex items-center gap-3">
+      <svg width="60" height="60" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Network nodes forming H */}
         {/* Left vertical nodes */}
         <circle cx="35" cy="35" r="8" fill="url(#gradient10)"/>
@@ -40,7 +40,7 @@ export function Logo() {
           </linearGradient>
         </defs>
       </svg>
-      <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">Hebel</span>
+      <span className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">Hebel</span>
     </div>
   );
 }
