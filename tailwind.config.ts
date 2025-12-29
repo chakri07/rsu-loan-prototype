@@ -51,9 +51,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        highlight: {
-          lavender: "hsl(var(--highlight-lavender))",
-          mint: "hsl(var(--highlight-mint))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
       },
       borderRadius: {
