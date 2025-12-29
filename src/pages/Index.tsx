@@ -17,7 +17,7 @@ const Index = () => {
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
               <TrendingUp className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-semibold">Levier</span>
+            <span className="text-xl font-semibold">Hebel</span>
           </div>
         </div>
       </nav>
@@ -129,7 +129,7 @@ const Index = () => {
       <footer className="relative z-10 border-t border-border/30 py-8">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>© 2025 Levier. All rights reserved.</p>
+            <p>© 2025 Hebel. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
