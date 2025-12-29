@@ -6,53 +6,54 @@
 
 @layer base {
   :root {
-    /* Dark premium theme */
-    --background: 220 20% 6%;
-    --foreground: 45 30% 95%;
+    /* Deep purple theme - #2D033B */
+    --background: 285 91% 12%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 45 30% 95%;
+    --card: 285 70% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 45 30% 95%;
+    --popover: 285 70% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Gold/Amber primary for premium feel */
-    --primary: 42 100% 50%;
-    --primary-foreground: 220 20% 6%;
+    /* Lavender highlight as primary - #989FCE */
+    --primary: 234 35% 70%;
+    --primary-foreground: 285 91% 12%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 45 30% 95%;
+    /* Muted purple secondary - #7D6B91 */
+    --secondary: 270 15% 49%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 285 50% 20%;
+    --muted-foreground: 270 15% 65%;
 
-    --accent: 42 80% 45%;
-    --accent-foreground: 220 20% 6%;
+    /* Mint highlight as accent - #F1FFE7 */
+    --accent: 94 100% 95%;
+    --accent-foreground: 285 91% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 42 100% 50%;
+    --border: 270 20% 30%;
+    --input: 285 50% 18%;
+    --ring: 234 35% 70%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gold: 42 100% 50%;
-    --gold-light: 45 100% 65%;
-    --gold-dark: 38 100% 40%;
-    --surface-glass: 220 20% 12%;
+    --highlight-lavender: 234 35% 70%;
+    --highlight-mint: 94 100% 95%;
+    --surface-glass: 285 60% 14%;
     
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(42 100% 50%), hsl(38 100% 40%));
-    --gradient-surface: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 20% 8%));
-    --gradient-glow: radial-gradient(ellipse at center, hsl(42 100% 50% / 0.15), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(234 35% 70%), hsl(94 100% 95%));
+    --gradient-surface: linear-gradient(180deg, hsl(285 70% 15%), hsl(285 91% 10%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(234 35% 70% / 0.15), transparent 70%);
     
     /* Shadows */
-    --shadow-gold: 0 0 60px hsl(42 100% 50% / 0.2);
-    --shadow-card: 0 8px 32px hsl(220 50% 3% / 0.4);
-    --shadow-elevated: 0 20px 40px hsl(220 50% 3% / 0.5);
+    --shadow-primary: 0 0 60px hsl(234 35% 70% / 0.2);
+    --shadow-card: 0 8px 32px hsl(285 91% 5% / 0.4);
+    --shadow-elevated: 0 20px 40px hsl(285 91% 5% / 0.5);
   }
 }
 
@@ -78,13 +79,13 @@
     box-shadow: var(--shadow-card);
   }
 
-  .gold-glow {
-    box-shadow: var(--shadow-gold);
+  .primary-glow {
+    box-shadow: var(--shadow-primary);
   }
 
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-gold);
+    background-image: var(--gradient-primary);
   }
 
   .hover-lift {
