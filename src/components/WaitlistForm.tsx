@@ -15,13 +15,15 @@ const WaitlistForm = () => {
     email: "",
     gender: "",
     net_worth: "",
-    leverage_type: "",
+    company: "",
+    age: "",
+    use_for: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.gender || !formData.net_worth || !formData.leverage_type) {
+    if (!formData.name || !formData.email || !formData.gender || !formData.net_worth || !formData.company || !formData.age || !formData.use_for) {
       toast({
         title: "Missing Information",
         description: "Please fill in all fields to join the waitlist.",
@@ -38,7 +40,9 @@ const WaitlistForm = () => {
         email: formData.email,
         gender: formData.gender,
         net_worth: formData.net_worth,
-        leverage_type: formData.leverage_type,
+        company: formData.company,
+        age: formData.age,
+        use_for: formData.use_for,
       });
 
       if (error) {
@@ -141,17 +145,45 @@ const WaitlistForm = () => {
       </div>
 
       <div className="space-y-2">
-        <Label className="text-foreground/80">What will you use as leverage?</Label>
-        <Select value={formData.leverage_type} onValueChange={(value) => setFormData({ ...formData, leverage_type: value })}>
+        <Label className="text-foreground/80">What company do you work for?</Label>
+        <Input
+          id="company"
+          placeholder="e.g. Google, Meta, Stripe"
+          value={formData.company}
+          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+          className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label className="text-foreground/80">Age</Label>
+        <Select value={formData.age} onValueChange={(value) => setFormData({ ...formData, age: value })}>
           <SelectTrigger className="bg-secondary/50 border-border/50 h-12">
-            <SelectValue placeholder="Select asset type" />
+            <SelectValue placeholder="Select age range" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="rsu">RSUs (Restricted Stock Units)</SelectItem>
-            <SelectItem value="stock-options">Stock Options</SelectItem>
-            <SelectItem value="espp">ESPP Shares</SelectItem>
-            <SelectItem value="vested-equity">Vested Equity</SelectItem>
-            <SelectItem value="mixed">Mixed Assets</SelectItem>
+            <SelectItem value="18-25">18-25</SelectItem>
+            <SelectItem value="26-35">26-35</SelectItem>
+            <SelectItem value="36-45">36-45</SelectItem>
+            <SelectItem value="46-55">46-55</SelectItem>
+            <SelectItem value="55+">55+</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="space-y-2">
+        <Label className="text-foreground/80">What would you use the funds for?</Label>
+        <Select value={formData.use_for} onValueChange={(value) => setFormData({ ...formData, use_for: value })}>
+          <SelectTrigger className="bg-secondary/50 border-border/50 h-12">
+            <SelectValue placeholder="Select purpose" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="home-purchase">Home Purchase / Down Payment</SelectItem>
+            <SelectItem value="investment">Investment Opportunities</SelectItem>
+            <SelectItem value="debt-consolidation">Debt Consolidation</SelectItem>
+            <SelectItem value="major-purchase">Major Purchase</SelectItem>
+            <SelectItem value="emergency">Emergency Fund</SelectItem>
+            <SelectItem value="other">Other</SelectItem>
           </SelectContent>
         </Select>
       </div>
