@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 # Ensure the workflow has permission to push to the repo and Pages
 permissions:
@@ -31,6 +32,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Create SPA fallback (404.html)
+        run: |
+          if [ -f dist/index.html ]; then
+            cp dist/index.html dist/404.html
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
