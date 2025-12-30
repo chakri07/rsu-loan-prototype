@@ -6,10 +6,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { Loader2, CheckCircle } from "lucide-react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const WaitlistForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { trackEvent } = useAnalytics();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -57,6 +59,7 @@ const WaitlistForm = () => {
         }
       } else {
         setIsSubmitted(true);
+        trackEvent("waitlist_signup", { company: formData.company });
         toast({
           title: "Welcome to the Waitlist!",
           description: "We'll be in touch soon with exclusive early access.",

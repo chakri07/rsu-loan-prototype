@@ -1,7 +1,10 @@
 import { Shield, Zap, DollarSign, TrendingUp } from "lucide-react";
 import WaitlistForm from "@/components/WaitlistForm";
 import { Logo } from "@/components/Logo";
+import { usePageView } from "@/hooks/useAnalytics";
+
 const Index = () => {
+  usePageView("Home");
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Background effects */}
