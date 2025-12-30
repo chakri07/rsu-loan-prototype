@@ -19,20 +19,10 @@ function getOrCreateSessionId() {
 }
 
 export const useAnalytics = () => {
-  const trackEvent = useCallback(async (eventType: string, metadata?: Record<string, any>) => {
-    try {
-      const session_id = getOrCreateSessionId() || null;
-      await supabase.from("page_views").insert([{ 
-        event_type: eventType,
-        path: window.location.pathname,
-        metadata: (metadata || {}) as Json,
-        user_agent: navigator.userAgent || null,
-        session_id,
-      }]);
-    } catch (error) {
-      // Silently fail - analytics should never break the app
-      console.error("Analytics error:", error);
-    }
+  // No-op analytics tracker to avoid extra writes on free tier.
+  const trackEvent = useCallback(async (_eventType: string, _metadata?: Record<string, any>) => {
+    // intentionally noop
+    return;
   }, []);
 
   return { trackEvent };
@@ -40,22 +30,6 @@ export const useAnalytics = () => {
 
 export const usePageView = (pageName?: string) => {
   useEffect(() => {
-    const trackPageView = async () => {
-      try {
-        const session_id = getOrCreateSessionId() || null;
-        await supabase.from("page_views").insert([{ 
-          event_type: "page_view",
-          path: window.location.pathname,
-          metadata: { page_name: pageName || document.title } as Json,
-          referrer: document.referrer || null,
-          user_agent: navigator.userAgent || null,
-          session_id,
-        }]);
-      } catch (error) {
-        console.error("Analytics error:", error);
-      }
-    };
-
-    trackPageView();
+    // No-op: page view counting is handled by `AnalyticsListener` via a lightweight RPC.
   }, [pageName]);
 };

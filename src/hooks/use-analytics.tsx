@@ -22,21 +22,13 @@ export function AnalyticsListener() {
   const location = useLocation();
 
   useEffect(() => {
-    const path = location.pathname + location.search;
-    const referrer = document.referrer || null;
-    const user_agent = navigator.userAgent || null;
     const session_id = getOrCreateSessionId() || null;
 
-    // fire-and-forget insert
-    supabase
-      .from("page_views")
-      .insert({ path, referrer, user_agent, session_id })
-      .then(() => {
-        // intentionally noop
-      })
-      .catch(() => {
-        // swallow errors to avoid breaking the app
-      });
+    // Call RPC once per session to increment today's visit count.
+    // This reduces write volume compared to per-click/pageview rows.
+    supabase.rpc("increment_visit", { p_session_id: session_id }).catch(() => {
+      // swallow errors to avoid breaking the app
+    });
   }, [location]);
 
   return null;
