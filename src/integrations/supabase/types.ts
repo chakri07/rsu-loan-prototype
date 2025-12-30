@@ -41,6 +41,7 @@ export type Database = {
       waitlist: {
         Row: {
           age: string
+          leverage_type: string | null
           company: string
           created_at: string
           email: string
@@ -52,6 +53,7 @@ export type Database = {
         }
         Insert: {
           age?: string
+          leverage_type?: string | null
           company: string
           created_at?: string
           email: string
@@ -63,6 +65,7 @@ export type Database = {
         }
         Update: {
           age?: string
+          leverage_type?: string | null
           company?: string
           created_at?: string
           email?: string
@@ -79,7 +82,9 @@ export type Database = {
         Row: {
           id: string
           path: string
+          event_type: string | null
           referrer: string | null
+          metadata: Json | null
           user_agent: string | null
           session_id: string | null
           created_at: string
@@ -87,7 +92,9 @@ export type Database = {
         Insert: {
           id?: string
           path: string
+          event_type?: string | null
           referrer?: string | null
+          metadata?: Json | null
           user_agent?: string | null
           session_id?: string | null
           created_at?: string
@@ -95,7 +102,9 @@ export type Database = {
         Update: {
           id?: string
           path?: string
+          event_type?: string | null
           referrer?: string | null
+          metadata?: Json | null
           user_agent?: string | null
           session_id?: string | null
           created_at?: string

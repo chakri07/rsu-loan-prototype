@@ -35,10 +35,17 @@ FOR DELETE
 USING (false);
 
 -- Add unique constraint on email for waitlist to prevent duplicates
+-- Ensure waitlist has expected columns before adding constraints
+ALTER TABLE public.waitlist
+    ADD COLUMN IF NOT EXISTS company TEXT,
+    ADD COLUMN IF NOT EXISTS age TEXT,
+    ADD COLUMN IF NOT EXISTS use_for TEXT;
+
+-- Add unique constraint on email for waitlist to prevent duplicates
 ALTER TABLE public.waitlist ADD CONSTRAINT waitlist_email_unique UNIQUE (email);
 
--- Add check constraints for data validation on waitlist
+-- Add check constraints for data validation on waitlist (company nullable)
 ALTER TABLE public.waitlist 
 ADD CONSTRAINT waitlist_email_format CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
 ADD CONSTRAINT waitlist_name_length CHECK (char_length(name) BETWEEN 1 AND 100),
-ADD CONSTRAINT waitlist_company_length CHECK (char_length(company) BETWEEN 1 AND 100);
+ADD CONSTRAINT waitlist_company_length CHECK (company IS NULL OR char_length(company) BETWEEN 1 AND 100);
