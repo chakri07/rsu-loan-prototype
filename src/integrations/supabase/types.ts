@@ -53,39 +53,7 @@ export type Database = {
         }
         Relationships: []
       }
-      page_views: {
-        Row: {
-          id: string
-          path: string
-          event_type: string | null
-          referrer: string | null
-          metadata: Json | null
-          user_agent: string | null
-          session_id: string | null
-          created_at: string
-        }
-        Insert: {
-          id?: string
-          path: string
-          event_type?: string | null
-          referrer?: string | null
-          metadata?: Json | null
-          user_agent?: string | null
-          session_id?: string | null
-          created_at?: string
-        }
-        Update: {
-          id?: string
-          path?: string
-          event_type?: string | null
-          referrer?: string | null
-          metadata?: Json | null
-          user_agent?: string | null
-          session_id?: string | null
-          created_at?: string
-        }
-        Relationships: []
-      }
+      
     }
     Views: {
       [_ in never]: never
