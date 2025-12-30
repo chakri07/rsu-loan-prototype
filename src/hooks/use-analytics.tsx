@@ -26,9 +26,15 @@ export function AnalyticsListener() {
 
     // Call RPC once per session to increment today's visit count.
     // This reduces write volume compared to per-click/pageview rows.
-    supabase.rpc("increment_visit", { p_session_id: session_id }).catch(() => {
-      // swallow errors to avoid breaking the app
-    });
+    // Use an async IIFE with try/catch instead of calling `.catch` directly
+    // to avoid a runtime error when `.rpc()` does not return a thenable.
+    (async () => {
+      try {
+        await supabase.rpc("increment_visit", { p_session_id: session_id });
+      } catch (e) {
+        // swallow errors to avoid breaking the app
+      }
+    })();
   }, [location]);
 
   return null;
